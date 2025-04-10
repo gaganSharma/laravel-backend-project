@@ -38,3 +38,12 @@ Route::middleware('auth:sanctum')->group(function () {
     // Example of a resource route:
     // Route::apiResource('products', ProductController::class);
 });
+
+// Post management endpoints
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('posts', \App\Http\Controllers\API\PostController::class);
+});
+// Simple Posts API (minimal version)
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('simple-posts', \App\Http\Controllers\API\SimplePostController::class);
+});
